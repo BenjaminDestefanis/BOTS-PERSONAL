@@ -1,0 +1,33 @@
+body{
+    font-family: Arial; padding: 20px; background: #f0f0f0;
+}
+
+#chat{ 
+    width: 100%; max-width: 500px; margin: auto; background: white; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px #ccc; 
+}
+
+.message { 
+    padding: 5px 10px; margin: 5px 0; border-radius: 5px; 
+}
+
+.user{ 
+    background-color: #cce5ff; text-align: right; 
+}
+
+.bot{ 
+    background-color: #e2e2e2; text-align: left; 
+}
+
+#inputArea{
+    display: flex; margin-top: 10px; 
+}
+
+#inputArea input{
+    flex: 1; padding: 10px; 
+}
+
+#inputArea button{ 
+    padding: 10px; 
+}
+
+  

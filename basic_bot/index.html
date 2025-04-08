@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <title>Bot Simple</title>
+  
+</head>
+<body>
+  <div id="chat">
+    <div id="chatBox"></div>
+    <div id="inputArea">
+      <input type="text" id="userInput" placeholder="Escribe algo..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const respuestas = {
+      "hola": "¡Hola! ¿Cómo estás?",
+      "¿cómo te llamas?": "Soy un bot básico 😊",
+      "adiós": "¡Hasta luego!",
+      "gracias": "¡De nada!"
+    };
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const msg = input.value.toLowerCase().trim();
+      if (msg === "") return;
+
+      addMessage(msg, "user");
+
+      let respuesta = respuestas[msg] || "Lo siento, no entiendo eso 😕";
+      setTimeout(() => addMessage(respuesta, "bot"), 500);
+
+      input.value = "";
+    }
+
+    function addMessage(text, sender) {
+      const chatBox = document.getElementById("chatBox");
+      const div = document.createElement("div");
+      div.className = `message ${sender}`;
+      div.textContent = text;
+      chatBox.appendChild(div);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
